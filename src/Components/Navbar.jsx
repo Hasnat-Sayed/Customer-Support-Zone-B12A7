@@ -1,8 +1,9 @@
 import React from 'react';
 
+
 const Navbar = () => {
     return (
-        <div className="navbar bg-white shadow-sm py-4">
+        <div className="navbar bg-white shadow-sm py-4 px-4">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -20,7 +21,7 @@ const Navbar = () => {
                             <li><a>Contact</a></li>
                         </ul>
                     </div>
-                    <p className="font-bold text-2xl p-0 whitespace-nowrap">CS — Ticket System</p>
+                    <p className="font-bold text-xl md:text-2xl p-0 whitespace-nowrap">CS — Ticket System</p>
                 </div>
                 <div className="navbar-end">
                     <ul className="menu menu-horizontal px-1 hidden md:flex">
