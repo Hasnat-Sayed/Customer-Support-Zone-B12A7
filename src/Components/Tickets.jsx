@@ -6,7 +6,7 @@ const Tickets = ({ ticket, progressHandler }) => {
         progressHandler(ticket)
     }
     return (
-        <div onClick={handleProgress} className=" bg-white p-4 rounded-md shadow-md cursor-pointer ">
+        <div onClick={handleProgress} className=" bg-white p-4 rounded-md shadow-md cursor-pointer hover:shadow-2xl ">
             <div className="flex justify-between items-center">
 
                 <h2 className="md:text-lg font-medium">{ticket.title}</h2>
@@ -14,7 +14,7 @@ const Tickets = ({ ticket, progressHandler }) => {
                     }`}>
                     <span className={`rounded-full h-4 w-4 mr-2 bg-[#02A53B] ${ticket.status === "Open" ? "bg-[#02A53B]" : "bg-[#FEBB0C]"
                         } `}></span>
-                    <p className={` font-medium  ${ticket.status === "Open" ? "text-[#0B5E06]" : "text-[#9C7700]"
+                    <p className={` font-medium whitespace-nowrap  ${ticket.status === "Open" ? "text-[#0B5E06]" : "text-[#9C7700]"
                         }`}>{ticket.status}</p>
                 </div>
             </div>

@@ -4,7 +4,8 @@ import './App.css'
 import Footer from './Components/Footer'
 import Main from './Components/Main'
 import Navbar from './Components/Navbar'
-import Banner from './Components/Banner';
+import Banner from './Components/Banner'
+import { ToastContainer} from 'react-toastify';
 
 const fetchData = async () => {
   const res = await fetch("/data.json");
@@ -30,7 +31,7 @@ function App() {
 
 
       <Footer></Footer>
-
+      <ToastContainer></ToastContainer>
     </>
   )
 }

@@ -1,20 +1,23 @@
 import React, { use, useState } from 'react';
 import Tickets from './Tickets';
-import Banner from './Banner';
 import Tasks from './Tasks';
 import Resolve from './Resolve';
+import { toast } from 'react-toastify';
 const Main = ({ fetchTickets, resolves, setResolve, tasks, setTasks }) => {
     const initialTickets = use(fetchTickets)
     const [tickets, setTickets] = useState(initialTickets)
 
-    // console.log(tickets)
-
     const progressHandler = (ticket) => {
+        const isAdded = tasks.find(ele => ele.id === ticket.id)
+        if (isAdded) {
+            toast.error("Task is already In-Progress")
+            return
+        }
         const newTask = ticket
         const updated = [...tasks, newTask]
         setTasks(updated)
         ticket.status = "In-Progress"
-        // alert("added to tasks")
+        toast.success("Task added to In-Progress")
     }
 
     const completeHandler = (task) => {
@@ -27,14 +30,11 @@ const Main = ({ fetchTickets, resolves, setResolve, tasks, setTasks }) => {
         const newResolve = task
         const updated = [...resolves, newResolve]
         setResolve(updated)
-
+        toast.success("Task Resolved!")
     }
-    
 
     return (
         <>
-
-            
 
             <div className=" bg-[#F5F5F5] pb-10">
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-7 gap-5 px-4">
@@ -73,7 +73,7 @@ const Main = ({ fetchTickets, resolves, setResolve, tasks, setTasks }) => {
                                         </p>
                                     </div>
                                 ) : (
-                                    resolves.map(resolve =><Resolve resolve={resolve}></Resolve> 
+                                    resolves.map(resolve => <Resolve resolve={resolve}></Resolve>
                                     )
                                 )
                             }
