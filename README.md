@@ -1,3 +1,10 @@
+## 🚀 Live Link
+
+Check out the live version of the project here:  
+👉 [**View Live Site**](https://customer-support-zone2099.netlify.app/) 
+
+---
+
 ### What is JSX, and why is it used?
 **Answer:** JSX, which stands for Javascript XML, is a syntax extension for Javascript that allows writing code that looks like HTML inside React components.
 
